@@ -1,0 +1,22 @@
+{
+  "name": "elasticsearch-query-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umang5/elasticsearch-query-builder.git"
+  },
+  "dependencies": {
+    "debug": "2.x"
+  },
+  "author": "Umang Aggarwal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/umang5/elasticsearch-query-builder/issues"
+  },
+  "homepage": "https://github.com/umang5/elasticsearch-query-builder#readme"
+}
