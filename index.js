@@ -5,6 +5,7 @@
 var util = require('util');
 var debug = require('debug')('es-query-builder');
 var queries = require('./queries');
+var aggregations = require('./aggregations');
 var ExpectationError = require('./lib').utils.error.ExpectationError;
 var dataUtils = require('./lib').utils.data_utils;
 
@@ -17,8 +18,10 @@ var queryBuilder = {
         }
         var queryDSL = {};
         if (options.term_filters) {
-
             queryDSL.query = queries.getQueries(options);
+        }
+        if(options.aggregations) {
+            queryDSL.aggs = aggregations.getAggs(options);
         }
         return queryDSL;
     }

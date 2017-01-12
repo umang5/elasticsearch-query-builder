@@ -9,7 +9,7 @@ var clausesConfig = require('../config').clauses;
 
 var termLevel = {
     getQuery: function (clause, options) {
-        if(!clausesConfig[clause] || clausesConfig[clause].type !== constants.QUERY_TYPES.TERM_LEVEL) {
+        if (!clausesConfig[clause] || clausesConfig[clause].type !== constants.QUERY_TYPES.TERM_LEVEL) {
             var err = new Error("Invalid Term Level Clause: " + clause);
             debug(err);
             throw err;

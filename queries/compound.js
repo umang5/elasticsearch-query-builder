@@ -12,7 +12,7 @@ var dataUtils = require('../lib').utils.data_utils;
 
 var compound = {
     getQuery: function (clause, options) {
-        if(!clausesConfig[clause] || clausesConfig[clause].type !== constants.QUERY_TYPES.COMPOUND) {
+        if (!clausesConfig[clause] || clausesConfig[clause].type !== constants.QUERY_TYPES.COMPOUND) {
             var err = new ExpectationError("Invalid Compound Clause: " + clause);
             throw err;
         }
@@ -22,8 +22,8 @@ var compound = {
         Object.keys(options).forEach(function (key) {
             var clauseQuery = {};
             var parsedClause = dataUtils.parseClause(key);
-            var parentClause ;
-            if(clause === 'or') {
+            var parentClause;
+            if (clause === 'or') {
                 parentClause = 'should'
             } else if (parsedClause.type && parsedClause.type === 'not') {
                 parentClause = 'must_not';
@@ -32,7 +32,7 @@ var compound = {
             }
 
             var actualClause = parsedClause.actual;
-            if(!clausesConfig[actualClause]) {
+            if (!clausesConfig[actualClause]) {
                 var err = new Error("Invalid Term Level Clause: " + actualClause);
                 debug(err);
                 throw err;

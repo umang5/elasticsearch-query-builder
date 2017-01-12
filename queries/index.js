@@ -21,7 +21,7 @@ var queries = {
 
             var rootClause = Object.keys(termFilters)[0];
             var actualRootClause = dataUtils.parseClause(rootClause).actual;
-            if(!clausesConfig[actualRootClause]) {
+            if (!clausesConfig[actualRootClause]) {
                 var err = new ExpectationError("Invalid Clause: " + actualRootClause);
                 debug(err);
                 throw err;
